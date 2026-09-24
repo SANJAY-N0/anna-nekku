@@ -12,7 +12,7 @@
 
     <title>Biryani Stall Billing</title>
 
-    <link rel="stylesheet" href="styl.css">
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
@@ -259,6 +259,52 @@
             </div>
 
 
+            <div class="customer-box">
+
+                <div class="amount-row">
+
+                    <label for="customerAmount">
+                        Customer Amount
+                    </label>
+
+                    <input
+                        id="customerAmount"
+                        type="number"
+                        min="0"
+                        step="1"
+                        value="0"
+                        oninput="updateCustomerBalance()"
+                    >
+
+                </div>
+
+                <div class="amount-row">
+
+                    <span>
+                        Remaining
+                    </span>
+
+                    <strong id="remainingAmount">
+                        ₹0
+                    </strong>
+
+                </div>
+
+                <div class="amount-row">
+
+                    <span>
+                        Change
+                    </span>
+
+                    <strong id="changeAmount">
+                        ₹0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
 
             <!-- PAYMENT -->
 
@@ -335,41 +381,26 @@
     </main>
 
 
-
-    <!-- =================================================
-         SALES
-    ================================================== -->
-
     <section class="card sales-section">
 
+        <div class="section-header sales-header">
 
-        <div class="section-header">
+            <div class="sales-title-wrap">
 
+                <div class="sales-icon">📊</div>
 
-            <div>
-
-                <h2>
-                    📊 Sales
-                </h2>
-
-                <p>
-                    Recent bills
-                </p>
+                <div>
+                    <h2>Sales</h2>
+                    <p>Recent bills</p>
+                </div>
 
             </div>
 
-
-            <button
-                class="export-btn"
-                onclick="exportExcel()"
-            >
+            <button class="export-btn" onclick="exportExcel()">
                 📥 Export Excel
             </button>
 
-
         </div>
-
-
 
         <div class="table-wrapper">
 
@@ -378,43 +409,19 @@
                 <thead>
 
                     <tr>
-
-                        <th>
-                            Bill No
-                        </th>
-
-                        <th>
-                            Date
-                        </th>
-
-                        <th>
-                            Time
-                        </th>
-
-                        <th>
-                            Payment
-                        </th>
-
-                        <th>
-                            Amount
-                        </th>
-
+                        <th>Bill No</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Payment</th>
+                        <th>Amount</th>
                     </tr>
 
                 </thead>
 
-
                 <tbody id="salesTable">
 
                     <tr>
-
-                        <td
-                            colspan="5"
-                            class="table-empty"
-                        >
-                            Loading sales...
-                        </td>
-
+                        <td colspan="5" class="table-empty">Loading sales...</td>
                     </tr>
 
                 </tbody>
@@ -422,7 +429,6 @@
             </table>
 
         </div>
-
 
     </section>
 
